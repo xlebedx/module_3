@@ -4,7 +4,7 @@ calls = 0
 def count_calls():
     global calls
     calls += 1
-    return calls -1
+    return calls - 1
 
 
 def string_info(string: str):
@@ -21,10 +21,11 @@ def is_contains(string: str, list_to_search: list):
     else:
         return False
 
+
 print(string_info('Capybara'))
 print(string_info('Armageddon'))
 print(string_info('Capygeddon'))
 print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))
 print(is_contains('cycle', ['recycling', 'cyclic']))
-print(is_contains('Suburban',['cycle','uRbaN','SuBuRbAn', ]))
+print(is_contains('Suburban', ['cycle', 'uRbaN', 'SuBuRbAn', ]))
 print(calls)
