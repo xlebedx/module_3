@@ -1,13 +1,15 @@
 variants = ('.com', '.ru', '.net')
+
+
 def send_email(message: str, recipient: str, *, sender='university.help@gmail.com'):
     global variants
     if '@' not in recipient and sender:
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     if recipient.endswith(variants) and sender.endswith(variants) == False:
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
-    if sender == recipient:
+    elif sender == recipient:
         print('Нельзя отправить письмо самому себе!')
-    if sender == 'university.help@gmail.com':
+    elif sender == 'university.help@gmail.com':
         print(f'Письмо успешно отправлено с адреса {sender} на адрес {recipient}.')
     else:
         print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.')
