@@ -9,10 +9,14 @@ def send_email(message: str, recipient: str, *, sender='university.help@gmail.co
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     elif sender == recipient:
         print('Нельзя отправить письмо самому себе!')
-    elif sender == 'university.help@gmail.com':
+    elif sender == 'university.help@gmail.com' and recipient.endswith(variants) and sender.endswith(variants) == True:
         print(f'Письмо успешно отправлено с адреса {sender} на адрес {recipient}.')
-    else:
+    elif recipient.endswith(variants) and sender.endswith(variants) == True:
         print(f'НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}.')
+    else:
+        print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
+
+
 
 
 send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
